@@ -1,11 +1,11 @@
 from django.shortcuts import render
 from django.core.exceptions import ObjectDoesNotExist
-from store.models import Product
+from store.models import Collection
 
 # Create your views here.
 def say_hello(request) :
     try:
-     product = Product.objects.get(pk=1);
+     collection = Collection.objects.filter(pk=1).exists();
     except ObjectDoesNotExist:
      pass;
     
